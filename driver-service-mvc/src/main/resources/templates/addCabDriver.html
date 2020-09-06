@@ -12,6 +12,7 @@
 		<div>
 			<label>Driver Name</label>
 		<input type="text" th:field="*{driverName}">
+		<span th:if="${#fields.hasErrors('driverName')}" th:errors="*{driverName}">Name Should be 3 to 10 chars</span>
 		</div>
 		<div>
 			<label>Driver Number</label> <input type="text"
