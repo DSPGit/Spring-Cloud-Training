@@ -37,4 +37,9 @@ public class CabDriverController {
 		return "showResults";
 	}
 	
+	@ModelAttribute("locationList")
+	public String[] locationList() {
+		return new String[] {"Pune", "Mumbai", "Chennai"};
+	}
+	
 }

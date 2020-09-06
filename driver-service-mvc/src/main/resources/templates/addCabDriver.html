@@ -5,20 +5,29 @@
 <title>Add Driver</title>
 </head>
 <body>
-	<form action="#" th:action="drivers" th:object="${command}" method="post">
+	<form action="#" th:action="drivers" th:object="${command}"
+		method="post">
 		<div>
 			<label>Driver Id</label> <input type="text" th:field="*{driverId}">
 		</div>
 		<div>
-			<label>Driver Name</label>
-		<input type="text" th:field="*{driverName}">
-		<span th:if="${#fields.hasErrors('driverName')}" th:errors="*{driverName}">Name Should be 3 to 10 chars</span>
+			<label>Driver Name</label> <input type="text"
+				th:field="*{driverName}"> <span
+				th:if="${#fields.hasErrors('driverName')}" th:errors="*{driverName}">Name
+				Should be 3 to 10 chars</span>
 		</div>
 		<div>
-			<label>Driver Number</label> <input type="text"
-				th:field="*{mobNo}">
+			<label>Driver Number</label> <input type="text" th:field="*{mobNo}">
 		</div>
-		<div><input type="submit" ></div>
+		<div> <label>Location</label>
+			<select th:field="${command.location}">
+				<option th:each="eachlocation : ${locationList}"
+					th:value="${eachlocation}" th:text="${eachlocation}">
+			</select>
+		</div>
+		<div>
+			<input type="submit">
+		</div>
 	</form>
 </body>
 </html>
